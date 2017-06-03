@@ -24,7 +24,7 @@
 
 int readersQueque=0,writersQueque=0,inReaders=0,inWriters=0;
 
-pthread_mutex_t mutexReadersRoom,mutexReaders;
+pthread_mutex_t mutexReadersRoom,mutexReaders,mutexWriters;
 
 pthread_cond_t turn;
 

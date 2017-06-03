@@ -7,6 +7,7 @@ pthread_t idReaders[readersCounter];
 pthread_t idWriters[writersCounter];
 
     pthread_mutex_init(&mutexReaders,NULL);
+    pthread_mutex_init(&mutexWriters,NULL);
     pthread_mutex_init(&mutexReadersRoom,NULL);
     pthread_cond_init(&turn, NULL);	
     //pthread_mutex_unlock(&mutexReaders);
