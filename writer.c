@@ -7,29 +7,26 @@ while ( 1 )
   {
 	waitForEntryWriter();
 	writersQueque++;
-	pthread_mutex_lock(&mutexReadersRoom);
-
-	/*
-	while (inReaders || inWriters)
+	if (inWriters==0) 
 	{
-	 pthread_cond_wait(&turn,&mutexReadersRoom);
-	}
-	*/
+	 pthread_mutex_lock(&mutexWriters);
+	}	
+	pthread_mutex_lock(&mutexReadersRoom);
 
 	inWriters++;
 	writersQueque--;
 	consoleOutput();
-	
-	//pthread_mutex_unlock(&mutexReadersRoom);
 
 	inReadingRoom();
-
-	//pthread_mutex_lock(&mutexReadersRoom);
 	
 	inWriters--;
 	consoleOutput();
+	
+	if (inWriters==0) 
+	{
+	 pthread_mutex_unlock(&mutexWriters);
+	}
 
-	//pthread_cond_broadcast(&turn);
 	pthread_mutex_unlock(&mutexReadersRoom);
 
 

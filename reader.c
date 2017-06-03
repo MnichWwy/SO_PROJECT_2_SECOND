@@ -9,6 +9,7 @@ while ( 1 )
 	waitForEntryReader();
 	readersQueque++;
 	consoleOutput();
+	pthread_mutex_lock(&mutexWriters);
 	pthread_mutex_lock(&mutexReaders);
 	 
 	if (inReaders==0)
@@ -31,9 +32,9 @@ while ( 1 )
 	if (inReaders==0)
 	{
 	 pthread_mutex_unlock(&mutexReadersRoom);
+	 pthread_mutex_unlock(&mutexWriters);
 	}
 
-	//pthread_cond_broadcast(&turn);
 	pthread_mutex_unlock(&mutexReaders);
 
   }
