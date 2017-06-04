@@ -24,7 +24,7 @@
 
 int readersQueque=0,writersQueque=0,inReaders=0,inWriters=0;
 
-pthread_mutex_t mutexReadersRoom,mutexReaders,mutexWriters;
+pthread_mutex_t mutexReadersRoom,mutexReaders,mutexWriters,mutexMutex;
 
 int main(int argc, char* argv[])
 {

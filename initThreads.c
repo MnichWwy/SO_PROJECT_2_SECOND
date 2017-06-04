@@ -9,6 +9,7 @@ pthread_t idWriters[writersCounter];
     pthread_mutex_init(&mutexReaders,NULL);
     pthread_mutex_init(&mutexWriters,NULL);
     pthread_mutex_init(&mutexReadersRoom,NULL);
+    pthread_mutex_init(&mutexMutex,NULL);
 
 	int i;
 

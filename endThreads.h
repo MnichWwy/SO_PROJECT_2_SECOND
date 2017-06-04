@@ -22,7 +22,7 @@
 
 extern int readersQueque,writersQueque,inReaders,inWriters;
 
-extern pthread_mutex_t mutexReadersRoom,mutexReaders,mutexWriters;
+extern pthread_mutex_t mutexReadersRoom,mutexReaders,mutexWriters,mutexMutex;
 
 void endThreads(int readersCounter,int writersCounter);
 

@@ -1,5 +1,5 @@
 #include "waitForEntryWriter.h"
 
 void waitForEntryWriter(){
-sleep(1);
+sleep(5);
 }

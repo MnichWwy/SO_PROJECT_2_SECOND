@@ -20,5 +20,6 @@ pthread_t idWriters[writersCounter];
 pthread_mutex_destroy(&mutexReadersRoom);
 pthread_mutex_destroy(&mutexReaders);	
 pthread_mutex_destroy(&mutexWriters);
+pthread_mutex_destroy(&mutexMutex);
 
 }
